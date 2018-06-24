@@ -5,22 +5,17 @@
     <title>OAuth Test</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta name="google-signin-client_id"
-          content="635810552534-1s6b3iongkovqapcbo19e6d1mqvb3cp7.apps.googleusercontent.com" >
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="script.js"></script>
 </head>
-<body>
+<body onload="handleClientLoad()">
 
 <div class="jumbotron">
     <h1 class="display-4">OAuth Sign In</h1>
     <p class="lead">Sign in with Google and see your profile details and 10 of your contacts.</p>
     <hr class="my-4">
-    <p class="lead">
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <button onclick="signOut()" class="btn btn-danger " id="signoutButton" style="display: none">Sign Out</button>
-    </p>
+    <button class="btn btn-info" id="signinButton" onclick="onSignIn()">Sign In</button>
+    <button class="btn btn-info" id="signoutButton" style="display: none" onclick="onSignOut()">Sign Out</button>
 </div>
 
 <div class="container">
@@ -32,10 +27,6 @@
         <div class="row">
             <div class="col-3">Email Adress</div>
             <div class="col-9" id="email"></div>
-        </div>
-        <div class="row">
-            <div class="col-3">ID</div>
-            <div class="col-9" id="ID"></div>
         </div>
         <div class="row">
             <div class="col-3">Full Name</div>
@@ -52,12 +43,13 @@
         <br>
         <div class="row">
             <div class="col-3">Contacts</div>
-            <div class="col-9"><pre id="content"></pre></div>
+            <div class="col-9"><pre id="contacts"></pre></div>
         </div>
     </div>
 </div>
 
-<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=handleClientLoad()">
+<script src="script.js"></script>
+<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 
 </body>
