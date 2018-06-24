@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="google-signin-client_id"
+          content="635810552534-mbr98o7tnupasrl658fq2vglk9l7uhqk.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1 class="display-4">OAuth Sign In</h1>
+    <p class="lead">Sign in with Google and see your profile details and 10 of your contacts.</p>
+    <hr class="my-4">
+    <p class="lead">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <button onclick="signOut()" class="btn btn-danger " id="signoutButton" style="display: none">Sign Out</button>
+    </p>
+</div>
+
+<div class="container">
+    <div class="data" style="display: none">
+        <div class="row">
+            <div class="col-3">Avatar</div>
+            <div class="col-9"><img id="pic" class="rounded-circle" width="100 px" height="100px"/></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Email Adress</div>
+            <div class="col-9" id="email"></div>
+        </div>
+        <div class="row">
+            <div class="col-3">ID</div>
+            <div class="col-9" id="ID"></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Full Name</div>
+            <div class="col-9" id="fullName"></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Given Name</div>
+            <div class="col-9" id="givenName"></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Family Name</div>
+            <div class="col-9" id="familyName"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3">Contacts</div>
+            <div class="col-9"><pre id="content"></pre></div>
+        </div>
+    </div>
+</div>
+
+<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=handleClientLoad()">
+</script>
+
+</body>
+</html>
