@@ -1,6 +1,6 @@
 
-const CLIENT_ID = '635810552534-mbr98o7tnupasrl658fq2vglk9l7uhqk.apps.googleusercontent.com';
-const API_KEY = 'AIzaSyBdYayG5Bc2XCzxuts2boWvRtdkzg2Dwp4';
+const CLIENT_ID = '635810552534-1s6b3iongkovqapcbo19e6d1mqvb3cp7.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyA1yto1cD1BwF5up_cfT68cq43oYqbsooo';
 const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/people/v1/rest"];
 const SCOPES = "https://www.googleapis.com/auth/contacts.readonly";
 
